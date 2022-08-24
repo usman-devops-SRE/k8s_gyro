@@ -1,0 +1,27 @@
+body, html{
+    min-height: 50%;
+}
+body{
+    background-image: url("pita1.png"), url("gyro1.png"), url("gyr2.png"), url("gyr2.jpg"), url("gyr3.png"), url("salad.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size:contain, contain, contain, contain, contain, contain;
+    background-position: 18.4% 120px, 1.5% 120px, 38% 120px, 54% 120px, 70% 120px, 87% 120px;
+    /*background-position:top center;*/
+    background-size:13% 100%;
+    /*background-size: right top;
+    background-size: contain; */
+    background-color: antiquewhite;
+    font-family:perpetua;
+    text-align: center;
+    text-decoration-color: antiquewhite;
+    color:darksalmon;
+}
+body ul li{
+    display:inline-block;
+    margin-right:60px;
+    text-align: center;
+    font-size:25px;
+}
+h1{
+    font-size:35px;
+}

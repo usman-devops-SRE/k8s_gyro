@@ -1,0 +1,18 @@
+body{
+    background-image: url("pita1.png");
+ background-repeat: no-repeat;
+    background-size:contain;
+    background-position: 50% 190px;
+    /*background-position:top center;*/
+    background-size:350px 420px;
+    /*background-size: right top;
+    background-size: contain; */
+    background-color: antiquewhite;
+    font-family:perpetua;
+    text-align: center;
+    text-decoration-color: antiquewhite;
+    color:darksalmon;
+}
+h1{
+    font-size:35px;
+}

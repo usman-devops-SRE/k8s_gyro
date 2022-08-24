@@ -1,0 +1,35 @@
+version: '3'
+services:
+  frontendimage:
+    image: frontendimage
+    ports:
+      - 3000:80
+    links:
+      - mysql # new line
+    volumes:         # new line
+      - ./4901/.:/var/www/html
+  mysql:
+    container_name: mysql1
+    image: mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=hglmx-5*B
+    #depends_on:
+      #- frontendimage
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - MYSQL_PASSWORD=hglmx-5*B
+      - MYSQL_ROOT_PASSWORD=hglmx-5*B
+      - MYSQL_USER=root
+      - PMA_PORT=3306
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql
+volumes:
+  db_data:

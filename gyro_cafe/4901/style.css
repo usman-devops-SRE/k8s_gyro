@@ -1,0 +1,38 @@
+body, html{
+    /*min-height: 50%;*/
+}
+
+
+
+body{
+    background-image: url("gril1.jpeg"), url("gril1.jpeg"), url("chicken.png"), url("sheep.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size:contain, contain, contain;
+    background-position: 50% 240px, 49.2% 40px, 30% 0%, 65% 32%;
+    /*background-position:top center;*/
+    background-size:550px 420px, 75px 50px, 190px, 70px 70px;
+    /*background-size: right top;
+    background-size: contain; */
+    background-color: antiquewhite;
+    font-family:perpetua;
+    text-align: center;
+    text-decoration-color: antiquewhite;
+    color:darksalmon;
+}
+body ul li a{
+     text-decoration:none;
+}
+body ul li{
+   
+    display:inline-block;
+    /*margin-left: 70px;*/
+    margin-right: 70px;
+    text-align: center;
+    font-size:25px;
+}
+body p{
+    font-size: 30px;
+}
+body h1{
+    font-size:40px;
+}

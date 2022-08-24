@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link href="http://localhost:8080/4901/drink.css" rel="stylesheet" type="text/css">
+    <title>Drink</title>
+    <h1><font size="7">Drink</font></h1>
+  <?php
+
+    // Create connection to database
+    $conn = mysqli_connect('localhost','root','','gyro cafe');
+    // SQL query all data from salads table
+    $sql = "SELECT * from drink";
+    // Push data to result variable - alternative OOP syntax
+    $result = mysqli_query($conn, $sql);  //$conn->query($sql);
+    // Check to make sure there is a result by rows returned - alternative OOP syntax
+    $resultcheck = mysqli_num_rows($result);  //$conn->num_rows($result);
+
+
+    // Could also be done with a simple if($result) - but checking number of rows returned is fine
+    if($result){
+
+        // Forgot to create table open tag
+        
+        // Just adding a table header for the rows
+        
+
+        while($row = mysqli_fetch_assoc($result)){
+
+            echo "<a>". $row["id"] .") ". $row["dish"] ." $". $row["price"] ." "; 
+            if($row["stock"]=='y'){
+                echo " available ";
+
+            }else{
+                echo " not available </a>";
+            }
+            echo "<a><li> ".$row["description"]."</li></a>";
+            
+        }
+
+    }else{
+
+        echo "0 result";
+
+    }
+
+      $conn->close();
+
+  ?>
+
+</html>

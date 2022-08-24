@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<link href="http://localhost:8080/4901/naanwich/naanwich.css" rel="stylesheet" type="text/css">
+    <title>Naanwich</title>
+    <h1><font size="7">Naanwich</font></h1>
+    
+
+
+<?php
+
+$dish = '';
+$price = '';
+$description = '';
+$stock = '';
+
+if(isset($_POST['Submit'])){
+    if(isset($_POST['dish'])){
+        $dish = $_POST['dish'];
+    }   
+    if(isset($_POST['price'])){
+        $price = $_POST['price'];
+    }
+    if(isset($_POST['description'])){
+        $description = $_POST['description'];
+    }
+    if(isset($_POST['stock'])){
+        $stock = $_POST['stock'];
+    }
+}
+
+$conn = new mysqli('localhost', 'root', '', 'gyro cafe');
+if($conn->connect_error){
+    die('Connection failed : ' .$conn->connect_error);
+}else{
+    $stmt = $conn->prepare("insert into naanwich(dish, price, description, stock) values(?, ?, ?, ?)");
+    $stmt->bind_param('sdss', $dish, $price, $description, $stock);
+    $stmt->execute();
+    echo "Naanwich has been updated";
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+</html>
